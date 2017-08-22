@@ -2,9 +2,9 @@ const f = require('fs');
 
 const read = (err,files)=>{
       let names = '';
-      const find= (e)=>{
-              if(e !=='amey'){
-                        names = names + e + '\n';
+      const find= (element)=>{
+              if(element !=='amey'){
+                        names = names + element + '\n';
                       }
             }
     files.forEach(find);
