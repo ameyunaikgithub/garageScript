@@ -1,6 +1,6 @@
-const addition =(a,b) => {
-  c = a+b;
-  return c;
+const addition =(number1,number2) => {
+  return number1+number2;
+  
 };
 
 module.exports = addition;
