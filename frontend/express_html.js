@@ -6,6 +6,6 @@ app.use(express.static('public'));
 app.get('/form',(req,res)=>{
     const name=req.query.username;
     const comment=req.query.comment;
-    fs.writeFile('/home/amey/garageScript/frontend/public/data.txt',"hello"+" "+ name+" "+ comment);
+    fs.writeFile('/home/amey/garageScript/frontend/public/data.txt', name+" "+ comment);
     res.send('done');
 });
