@@ -14,7 +14,6 @@ const a = document.getElementById('submit');
 a.onclick=()=> {
   const name= document.getElementById('username').value;
   const comment = document.getElementById('comment').value;
-  //  alert(name + ' ' + comment);
   const b = new XMLHttpRequest();
   b.open('GET',`/XMLHttpRequest?username=${name}&comment=${comment}`);
   b.send();
