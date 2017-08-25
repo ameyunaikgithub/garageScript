@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body>
+    Name:<input type = 'text' id = 'username'/>
+    Comment: <input type='text' id='comment'/>
+    submit: <input type = 'submit' id= 'submit'/>
+    <script>
+
+const button = document.getElementById('submit');
+button.onclick=()=> {
+  const name= document.getElementById('username').value;
+  const comment = document.getElementById('comment').value;
+  const xhttp = new XMLHttpRequest();
+  xhttp.open('GET',`/anyurl?username=${name}&comment=${comment}`);
+  xhttp.send();
+};
+    </script>
+  </body>
+</html>
+
