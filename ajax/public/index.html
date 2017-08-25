@@ -10,13 +10,13 @@
     submit: <input type = 'submit' id= 'submit'/>
     <script>
 
-const a = document.getElementById('submit');
-a.onclick=()=> {
+const button = document.getElementById('submit');
+button.onclick=()=> {
   const name= document.getElementById('username').value;
   const comment = document.getElementById('comment').value;
-  const b = new XMLHttpRequest();
-  b.open('GET',`/XMLHttpRequest?username=${name}&comment=${comment}`);
-  b.send();
+  const xhttp = new XMLHttpRequest();
+  xhttp.open('GET',`/XMLHttpRequest?username=${name}&comment=${comment}`);
+  xhttp.send();
 };
     </script>
   </body>
