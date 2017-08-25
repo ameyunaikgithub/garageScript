@@ -12,12 +12,12 @@
  <pre id="chatid"/>
  </div>
  <script>
-const input =document.getElementById("button");
-input.onclick=()=>{
+const button =document.getElementById("button");
+button.onclick=()=>{
   const name=document.getElementById("Name").value;
   const comment=document.getElementById("Comment").value;
   const xhttp=new XMLHttpRequest();
-  xhttp.open('GET', `/XMLHttpRequest?Name=${name}&Comment=${comment}`);
+  xhttp.open('GET', `/anyurl?Name=${name}&Comment=${comment}`);
   xhttp.send();
 }
 const startchat=()=>{
