@@ -1,0 +1,76 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    Name:<input type="text" id="Name" />
+    Comment:<input type="text" id="Comment" />
+  <!--<input type="submit" id="button" />-->
+    Picture:<input type="submit" value="take picture" id = "click"/>
+      <pre id="chatid"/>
+      <video id = "v1"></video>
+      <canvas width = 400 height = 400 id ='c1'></canvas>
+
+ <script>
+/*const button =document.getElementById("button");
+button.onclick=()=>{
+  const name=document.getElementById("Name").value;
+  const comment=document.getElementById("Comment").value;
+  const xhttp=new XMLHttpRequest();
+  xhttp.open('POST', '/newchat');
+  xhttp.setRequestHeader('content-type', 'application/json');
+  xhttp.send(JSON.stringify(
+        {name, comment}
+  )
+  );
+}
+const startchat=()=>{
+  const xhttp=new XMLHttpRequest();
+  xhttp.open('GET','/data.txt');
+  xhttp.onreadystatechange=()=>{
+    if(xhttp.responseText){
+      const content = document.getElementById('chatid');
+      content.innerHTML=xhttp.responseText;
+      console.log(content.innerHTML);
+    }
+  }
+  xhttp.send();
+}
+*/
+/*Camera*/
+const video=document.getElementById('v1');
+navigator.mediaDevices.getUserMedia({
+  video:true,
+  audio: false
+}).then((mediaStream) =>{
+  video.srcObject = mediaStream;
+  video.play();
+}).catch((err)=>{
+  console.log(err);
+});
+
+/*picture*/
+
+const button2 = document.getElementById('click');
+button2.onclick=()=>{
+  const canvas = document.getElementById('c1');
+  const context = canvas.getContext('2d');
+  context.drawImage(video,0,0);
+  const dataURL=canvas.toDataURL('image/png');
+  const xhttp=new XMLHttpRequest();
+  xhttp.open('POST','/picture');
+  xhttp.setRequestHeader('content-type','application/json');
+  xhttp.send(JSON.stringify(
+        {canvas:dataURL}
+        ));
+}
+ </script>
+  </body>
+</html>
+
+
+
+
